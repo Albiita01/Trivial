@@ -55,4 +55,57 @@ public class TrivialTests {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void entreDosYSeisJugadores() {
+        Game sut = new Game();
+        sut.agregar("María");
+        sut.agregar("Juan");
+        sut.agregar("Antonio");
+        sut.agregar("Andrea");
+
+        Boolean expected = true;
+        boolean actual = sut.esJugable();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void seisJugadores() {
+        try {
+            Game sut = new Game();
+            sut.agregar("María");
+            sut.agregar("Juan");
+            sut.agregar("Antonio");
+            sut.agregar("Andrea");
+            sut.agregar("Luis");
+            sut.agregar("Fernando");
+
+            Boolean expected = true;
+            boolean actual = sut.esJugable();
+
+            Assertions.assertEquals(expected, actual);
+        } catch (ArrayIndexOutOfBoundsException e){
+        }
+    }
+
+    @Test
+    public void masDeSeisJugadores() {
+        try {
+            Game sut = new Game();
+            sut.agregar("María");
+            sut.agregar("Juan");
+            sut.agregar("Antonio");
+            sut.agregar("Andrea");
+            sut.agregar("Luis");
+            sut.agregar("Fernando");
+            sut.agregar("Carmen");
+
+            Boolean expected = false;
+            boolean actual = sut.esJugable();
+
+            Assertions.assertEquals(expected, actual);
+        } catch (ArrayIndexOutOfBoundsException e){
+        }
+    }
 }

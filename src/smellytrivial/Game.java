@@ -34,6 +34,9 @@ public class Game {
         if (cuantosJugadores() < 2) {
             System.out.println("Para iniciar el juego, se necesitan como mínimo 2 jugadores.");
             return false;
+        } else if (cuantosJugadores() > 6) {
+                System.out.println("Para iniciar la partida, debe haber un máximo de 6 jugadores.");
+                return false;
         } else {
             return true;
         }
