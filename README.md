@@ -23,3 +23,7 @@ En el método "tirarDado()", ponemos las llaves correspondientes después del te
 if para que el jugador pueda salir de la cárcel y continuar con la partida. En 
 la clase de los tests, he creado un test "salirDeLaCarcel()" que simula una partida para comprobar 
 que ya se puede salir de la cárcel si el jugador acierta la pregunta.
+
+## Problema 4
+En la clase "Game Launcher", cambiamos donde pone "noGanador" por "ganador" y lo convertimos 
+en variable para que ahora ganador sea true y se acabe la partida.
