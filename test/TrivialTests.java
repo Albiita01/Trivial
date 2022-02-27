@@ -2,6 +2,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import smellytrivial.Game;
 
+import java.util.Random;
+
 public class TrivialTests {
     @Test
     public void true_is_true(){
@@ -107,5 +109,19 @@ public class TrivialTests {
             Assertions.assertEquals(expected, actual);
         } catch (ArrayIndexOutOfBoundsException e){
         }
+    }
+
+    @Test
+    public void salirDeLaCarcel() {
+        Game sut = new Game();
+        sut.agregar("María");
+        sut.agregar("Juan");
+
+        sut.respuestaIncorrecta();
+        sut.tirarDado(2);
+        sut.respuestaIncorrecta();
+        sut.tirarDado(1);
+        sut.nuevaPosicionJugador();
+        sut.fueRespuestaCorrecta();
     }
 }
