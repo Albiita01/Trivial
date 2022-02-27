@@ -30,4 +30,29 @@ public class TrivialTests {
         // Assert
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void menosDeDosJugadores() {
+        Game sut = new Game();
+        sut.agregar("María");
+        sut.esJugable();
+
+        Boolean expected = false;
+        boolean actual = sut.esJugable();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void dosJugadores() {
+        Game sut = new Game();
+        sut.agregar("María");
+        sut.agregar("Juan");
+        sut.esJugable();
+
+        Boolean expected = true;
+        boolean actual = sut.esJugable();
+
+        Assertions.assertEquals(expected, actual);
+    }
 }
