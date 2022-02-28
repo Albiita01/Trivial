@@ -32,5 +32,21 @@ en variable para que ahora ganador sea true y se acabe la partida.
 En la clase Game, busco cuál es el código para pasar al siguiente jugador y veo que es: 
 "jugadorActual++;
 if (jugadorActual == jugadores.size()) jugadorActual = 0;"
-Lo selecciono y le doy a "Refactor" y luego a "Extract method" le pongo el nombre de "siguienteJuugador()" 
+Lo selecciono y le doy a "Refactor" y luego a "Extract method", le pongo el nombre de "siguienteJuugador()" 
 al método y lo sustituyo en todos los sitios que aparezca.
+
+## Problema 6
+En el método "fueRespuestaCorrecta()", busco lo que está repetido, que es:
+"System.out.println("Respuesta correcta!!!!");
+monederos[jugadorActual]++;
+System.out.println(jugadores.get(jugadorActual)
++ " ahora tiene "
++ monederos[jugadorActual]
++ " monedas doradas.");
+
+boolean ganador = jugadorHaGanado();
+siguienteJugador();
+
+return ganador;"
+Lo selecciono todo y le doy a "Refactor" y luego a "Extract method", le pongo el nombre de "respCorrecta()" 
+y lo sustituyo en ambos lados.

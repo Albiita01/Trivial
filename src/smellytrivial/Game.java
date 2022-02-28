@@ -126,17 +126,7 @@ public class Game {
     public boolean fueRespuestaCorrecta() {
         if (enCasillaCastigo[jugadorActual]) {
             if (estaSaliendoDeLaCarcel) {
-                System.out.println("Respuesta correcta!!!!");
-                monederos[jugadorActual]++;
-                System.out.println(jugadores.get(jugadorActual)
-                        + " ahora tiene "
-                        + monederos[jugadorActual]
-                        + " monedas doradas.");
-
-                boolean ganador = jugadorHaGanado();
-                siguienteJugador();
-
-                return ganador;
+                return respCorrecta();
             } else {
                 siguienteJugador();
                 return true;
@@ -145,18 +135,22 @@ public class Game {
 
         } else {
 
-            System.out.println("Respuesta correcta!!!!");
-            monederos[jugadorActual]++;
-            System.out.println(jugadores.get(jugadorActual)
-                    + " ahora tiene "
-                    + monederos[jugadorActual]
-                    + " monedas doradas.");
-
-            boolean ganador = jugadorHaGanado();
-            siguienteJugador();
-
-            return ganador;
+            return respCorrecta();
         }
+    }
+
+    private boolean respCorrecta() {
+        System.out.println("Respuesta correcta!!!!");
+        monederos[jugadorActual]++;
+        System.out.println(jugadores.get(jugadorActual)
+                + " ahora tiene "
+                + monederos[jugadorActual]
+                + " monedas doradas.");
+
+        boolean ganador = jugadorHaGanado();
+        siguienteJugador();
+
+        return ganador;
     }
 
     public boolean respuestaIncorrecta() {
