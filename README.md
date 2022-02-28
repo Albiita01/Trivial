@@ -27,3 +27,10 @@ que ya se puede salir de la cárcel si el jugador acierta la pregunta.
 ## Problema 4
 En la clase "Game Launcher", cambiamos donde pone "noGanador" por "ganador" y lo convertimos 
 en variable para que ahora ganador sea true y se acabe la partida.
+
+## Problema 5
+En la clase Game, busco cuál es el código para pasar al siguiente jugador y veo que es: 
+"jugadorActual++;
+if (jugadorActual == jugadores.size()) jugadorActual = 0;"
+Lo selecciono y le doy a "Refactor" y luego a "Extract method" le pongo el nombre de "siguienteJuugador()" 
+al método y lo sustituyo en todos los sitios que aparezca.
